@@ -2,7 +2,23 @@ package mathp
 
 import (
 	"testing"
+
+	"github.com/golangplus/testing/assert"
 )
+
+func TestMin(t *testing.T) {
+	data := []int{5, 7, 1, 9, 3}
+	assert.Equal(t, "min", Min(len(data), func(i, j int) bool {
+		return data[i] < data[j]
+	}), 2)
+}
+
+func TestMax(t *testing.T) {
+	data := []int{5, 7, 1, 9, 3}
+	assert.Equal(t, "max", Max(len(data), func(i, j int) bool {
+		return data[i] < data[j]
+	}), 3)
+}
 
 func TestMaxI(t *testing.T) {
 	if MaxI(2, 3) != 3 {
