@@ -1,59 +1,45 @@
+// Copyright 2015 The Golang Plus Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
 package mathp
 
 import (
-	"testing"
+	"fmt"
 )
 
-func TestMaxI(t *testing.T) {
-	if MaxI(2, 3) != 3 {
-		t.Errorf("MaxI(2, 3) returns %v instead of 3", MaxI(2, 3))
-	}
-	if MaxI(3, 2) != 3 {
-		t.Errorf("MaxI(3, 2) returns %v instead of 3", MaxI(3, 2))
-	}
+func ExampleMaxI() {
+	fmt.Println(MaxI(2, 3))
+	// OUTPUT:
+	// 3
 }
 
-func TestMaxI32(t *testing.T) {
-	if MaxI32(2, 3) != 3 {
-		t.Errorf("MaxI32(2, 3) returns %v instead of 3", MaxI32(2, 3))
-	}
-	if MaxI32(3, 2) != 3 {
-		t.Errorf("MaxI32(3, 2) returns %v instead of 3", MaxI32(3, 2))
-	}
+func ExampleMaxI32() {
+	fmt.Println(MaxI32(2, 3))
+	// OUTPUT:
+	// 3
 }
 
-func TestMaxI64(t *testing.T) {
-	if MaxI64(2, 3) != 3 {
-		t.Errorf("MaxI64(2, 3) returns %v instead of 3", MaxI64(2, 3))
-	}
-	if MaxI64(3, 2) != 3 {
-		t.Errorf("MaxI64(3, 2) returns %v instead of 3", MaxI64(3, 2))
-	}
+func ExampleMaxI64() {
+	fmt.Println(MaxI64(2, 3))
+	// OUTPUT:
+	// 3
 }
 
-func TestMinI(t *testing.T) {
-	if MinI(2, 3) != 2 {
-		t.Errorf("MinI(2, 3) returns %v instead of 2", MinI(2, 3))
-	}
-	if MinI(3, 2) != 2 {
-		t.Errorf("MinI(3, 2) returns %v instead of 2", MinI(3, 2))
-	}
+func ExampleMinI() {
+	fmt.Println(MinI(2, 3))
+	// OUTPUT:
+	// 2
 }
 
-func TestMinI32(t *testing.T) {
-	if MinI32(2, 3) != 2 {
-		t.Errorf("MinI32(2, 3) returns %v instead of 2", MinI32(2, 3))
-	}
-	if MinI32(3, 2) != 2 {
-		t.Errorf("MinI32(3, 2) returns %v instead of 2", MinI32(3, 2))
-	}
+func ExampleMinI32() {
+	fmt.Println(MinI32(2, 3))
+	// OUTPUT:
+	// 2
 }
 
-func TestMinI64(t *testing.T) {
-	if MinI64(2, 3) != 2 {
-		t.Errorf("MinI64(2, 3) returns %v instead of 2", MinI64(2, 3))
-	}
-	if MinI64(3, 2) != 2 {
-		t.Errorf("MinI64(3, 2) returns %v instead of 2", MinI64(3, 2))
-	}
+func ExampleMinI64() {
+	fmt.Println(MinI64(2, 3))
+	// OUTPUT:
+	// 2
 }

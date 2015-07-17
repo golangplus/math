@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 /*
-Package mathp is a plus to standard "math" package.
+Package mathp is a plus to the standard "math" package.
 */
 package mathp
 
