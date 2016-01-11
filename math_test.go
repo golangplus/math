@@ -8,14 +8,13 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/golangplus/strings"
 	"github.com/golangplus/testing/assert"
 )
 
 func TestMin(t *testing.T) {
-	data := []int{5, 7, 1, 9, 3}
-	assert.Equal(t, "min", Min(len(data), func(i, j int) bool {
-		return data[i] < data[j]
-	}), 2)
+	data := []string{"5", "7", "1", "9", "3"}
+	assert.Equal(t, "min", data[Min(len(data), stringsp.LessFunc(data))], "1")
 }
 
 func ExampleMinStrings() {
@@ -55,46 +54,31 @@ func ExampleMaxFloat() {
 }
 
 func TestMaxI(t *testing.T) {
-	if MaxI(2, 3) != 3 {
-		t.Errorf("MaxI(2, 3) returns %v instead of 3", MaxI(2, 3))
-	}
-	if MaxI(3, 2) != 3 {
-		t.Errorf("MaxI(3, 2) returns %v instead of 3", MaxI(3, 2))
-	}
+	assert.Equal(t, "MaxI", MaxI(2, 3), 3)
+	assert.Equal(t, "MaxI", MaxI(3, 2), 3)
 }
 
-func ExampleMaxI() {
-	fmt.Println(MaxI(2, 3))
-	// OUTPUT:
-	// 3
+func TestMaxI32(t *testing.T) {
+	assert.Equal(t, "MaxI", MaxI32(2, 3), int32(3))
+	assert.Equal(t, "MaxI", MaxI32(3, 2), int32(3))
 }
 
-func ExampleMaxI32() {
-	fmt.Println(MaxI32(2, 3))
-	// OUTPUT:
-	// 3
+func TestMaxI64(t *testing.T) {
+	assert.Equal(t, "MaxI", MaxI64(2, 3), int64(3))
+	assert.Equal(t, "MaxI", MaxI64(3, 2), int64(3))
 }
 
-func ExampleMaxI64() {
-	fmt.Println(MaxI64(2, 3))
-	// OUTPUT:
-	// 3
+func TestMinI(t *testing.T) {
+	assert.Equal(t, "MinI", MinI(2, 3), 2)
+	assert.Equal(t, "MinI", MinI(3, 2), 2)
 }
 
-func ExampleMinI() {
-	fmt.Println(MinI(2, 3))
-	// OUTPUT:
-	// 2
+func TestMinI32(t *testing.T) {
+	assert.Equal(t, "MinI", MinI32(2, 3), int32(2))
+	assert.Equal(t, "MinI", MinI32(3, 2), int32(2))
 }
 
-func ExampleMinI32() {
-	fmt.Println(MinI32(2, 3))
-	// OUTPUT:
-	// 2
-}
-
-func ExampleMinI64() {
-	fmt.Println(MinI64(2, 3))
-	// OUTPUT:
-	// 2
+func TestMinI64(t *testing.T) {
+	assert.Equal(t, "MinI", MinI64(2, 3), int64(2))
+	assert.Equal(t, "MinI", MinI64(3, 2), int64(2))
 }
